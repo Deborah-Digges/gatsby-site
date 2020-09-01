@@ -30,7 +30,7 @@ Additional data for under-represented classes was generated through a combinatio
 
 ### 3. Definition of CNN Architecture
 
-![Architecture]({{site.url}}/images/NN.jpg)
+![Architecture](../images/NN.jpg)
 <div class="align-center">Fig: CNN Architecture</div>
 
 The model consisted of 2 convolutional layers followed by two fully connected layers. Several methods were employed for preventing over-fitting including:
@@ -51,12 +51,12 @@ Training on a CPU became quickly unwieldy and frustrating, so I set up an enviro
 
 The model was tested on images from the web and the probabilities of the top 5 predicted classes were plotted. For some of the classes the model was spot on:
 
-![Architecture]({{site.url}}/images/test-image.png)
+![Architecture](../images/test-image.png)
 <div class="align-center">Fig: Classification of New Image</div>
 
 The model classifier mis-classified some images, but had the correct prediction within the top 5 predicted classes. For example, this 30km/h sign was mis-classified as an 80km/h sign:
 
-![Architecture]({{site.url}}/images/wrong-classification.png)
+![Architecture](../images/wrong-classification.png)
 <div class="align-center">Fig: Mis-classification of 30km/h sign</div>
 
 

@@ -8,7 +8,7 @@ This time around, it's time for a new adventure! I've enrolled for the [Deep Rei
 
 Let the games begin!
 
-![games]({{site.url}}/images/deep-reinforcement-learning.gif)
+![games](../images/deep-reinforcement-learning.gif)
 <div></div>
 
 [Source](https://github.com/udacity/deep-reinforcement-learning)

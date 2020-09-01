@@ -93,7 +93,7 @@ class Matrix
 
 The local object *result* created in the function is returned by *value* and a special *move constructor* is used in the creation of the object c, by the caller. This move constructor *steals* the representation of the local object *result*. It makes the newly created object *c* point to this object, while making the local object *result* the empty object.
 
-![MOVE_CTOR]({{site.url}}/images/move_ctor.png)
+![MOVE_CTOR](../images/move_ctor.png)
 <div class="align-center">Fig: Illustration of the working of Move Constructor</div>
 
 

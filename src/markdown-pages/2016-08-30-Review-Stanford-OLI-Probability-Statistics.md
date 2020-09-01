@@ -6,7 +6,7 @@ I've just finished the material of the [Probability and Statistics Course](https
 
 The course is an introduction to the fundamental concepts in statistics, and offers a holistic treatment of the "Big Picture" of Statistics, the ultimate aim of which is to make conclusions about a population based on data collected from a sample.
 
-![Big Picture View of Statistics]({{site.url}}/images/big-picture-statistics.png)
+![Big Picture View of Statistics](../images/big-picture-statistics.png)
 <div class="align-center">Fig: The Big Picture of Statistics</div>
 
 The course is mostly textual, with plenty of supporting diagrams and a few videos explaining crucial concepts. Multiple choice quizzes are presented after and during the learning of each concept, to strengthen understanding of the same.

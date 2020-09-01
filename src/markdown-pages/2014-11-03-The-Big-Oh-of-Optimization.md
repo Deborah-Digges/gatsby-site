@@ -5,7 +5,7 @@ We now have a functional GC, but we need to ask ourselves the question-*Can we d
 
 ## What to Optimize
 A good way to identify bottlenecks is by using a profiling tool like *gprof*. We add a *new test* for performance, where we initialize a heap of a 100,000 blocks and a threshold GC invocation of 1,000 blocks. The profiling shows the following results.
-![GPROF]({{site.url}}/images/gprof.png)
+![GPROF](../images/gprof.png)
 <div class="align-center">Fig: Gprof Profile</div>
 
 A lot of the execution time is spent in the standard library functions and in the core GC routines - mark & sweep. We now know what to optimize.
@@ -40,7 +40,7 @@ void VM::mark(Object* object)
 The mark routine can be [implemented iteratively](https://github.com/Deborah-Digges/mark-sweep-simulation/tree/master/02-marksweep-Explicit-Stack). We use an explicit stack for traversing allocated objects. It *does* the same thing, although [the code](https://github.com/Deborah-Digges/mark-sweep-simulation/blob/master/02-marksweep-Explicit-Stack/vm.cpp/#L151-192) is more contorted and unnatural.<br/>
 As we traverse a node, it is marked; it is pushed onto the stack if there are other nodes reachable from it--if it is not an atom. The algorithm repeateadly pops elements from the stack, marks the elements reachable from the popped element and performs the same procedure till the stack becomes empty.<br/>
 
-![GPROF]({{site.url}}/images/traversal.png)
+![GPROF](../images/traversal.png)
 <div class="align-center">Fig: Mark Using an Explicit Stack</div>
 
 

@@ -7,7 +7,7 @@ A simplifying assumption we are making is that allocation of memory is always in
 The virtual machine’s *execution stack* holds references to objects, which can either be atomic or can in turn hold references to other objects. 
 
 
-![VM]({{site.url}}/images/gc.png)
+![VM](../images/gc.png)
 <div class="align-center">Fig: Illustration of the working of a GC</div>
 
 ## What does Allocation Involve?
