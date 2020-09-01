@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Link from "gatsby-link";
+import { TemplateWrapper } from "../layouts/index";
 
 export default function Home({
   data, 
@@ -9,9 +10,9 @@ export default function Home({
     <Link to={edge.node.fields.slug}>{edge.node.frontmatter.title}</Link>
     <h2>{edge.node.fields.date}</h2>
   </div>));
-  return (<>
+  return (<TemplateWrapper>
     {blogList}
-  </>);
+  </TemplateWrapper>);
 };
 
 export const query = graphql`

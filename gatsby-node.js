@@ -7,7 +7,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     const { categories } = node.frontmatter;
     const filePath = createFilePath({ node, getNode, basePath: `pages` });
     const { date, slug } = extractMetadataFromFilename(filePath);
-    console.log(date, slug);
     createNodeField({ node, name: `slug`, value: slug  });
     createNodeField({ node, name: `date`, value: date });
   }
