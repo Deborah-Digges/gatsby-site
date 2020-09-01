@@ -5,28 +5,27 @@ import Link from "gatsby-link";
 export default function Home({
   data, 
 }) {
-  console.log(data);
   const blogList = data.allMarkdownRemark.edges.map(edge => (<div>
-    <Link to={edge.node.frontmatter.slug}>{edge.node.frontmatter.title}</Link>
-    <p>{edge.node.frontmatter.date}</p>
+    <Link to={edge.node.fields.slug}>{edge.node.frontmatter.title}</Link>
+    <h2>{edge.node.fields.date}</h2>
   </div>));
   return (<>
     {blogList}
   </>);
 };
 
-export const pageQuery = graphql`
-{
-  allMarkdownRemark(
-    sort: { order: DESC, fields: [frontmatter___date] }
-    limit: 1000
-  ) {
+export const query = graphql`
+query IndexQuery {
+  allMarkdownRemark(sort: { order: DESC, fields: [fields___date] }) {
     edges {
       node {
+        id
         frontmatter {
-          slug,
-          title,
-          date(formatString: "MMMM DD, YYYY")
+          title
+        }
+        fields {
+          slug
+          date
         }
       }
     }
