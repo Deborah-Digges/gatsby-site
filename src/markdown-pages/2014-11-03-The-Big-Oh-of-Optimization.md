@@ -18,8 +18,7 @@ However, what recursion *is* great for is *understanding* the problem.
 The algorithm is succinct and lends itself to easy interpretation -
 Mark an object if it isn't already marked; if it has references to other objects, mark those too.
 
-{% highlight C++ %}
-{% raw %}
+```c++
 void VM::mark(Object* object)
 {
         if(object->marked)
@@ -35,8 +34,7 @@ void VM::mark(Object* object)
                 mark(object->right);
         }
 }
-{% endraw %}
-{% endhighlight %}
+```
 
 ## Implementing Mark using an Explicit Stack
 The mark routine can be [implemented iteratively](https://github.com/Deborah-Digges/mark-sweep-simulation/tree/master/02-marksweep-Explicit-Stack). We use an explicit stack for traversing allocated objects. It *does* the same thing, although [the code](https://github.com/Deborah-Digges/mark-sweep-simulation/blob/master/02-marksweep-Explicit-Stack/vm.cpp/#L151-192) is more contorted and unnatural.<br/>

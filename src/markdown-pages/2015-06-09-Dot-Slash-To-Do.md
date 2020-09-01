@@ -7,7 +7,7 @@ To ease this menace, I went about writing a little command line To Do list that'
 
 Here’s a sample run:
 
-{% highlight bash %}
+```bash
 $ todo add Go to XYZ
 
 $ todo add Meet Phil
@@ -26,17 +26,17 @@ What’ve you done old (wo)man?
 
 $ todo
 1. Meet Phil
-{% endhighlight %}
+```
 
 Here's what `todo` can do:
 
-`todo add <thing to be done>` will add an entry to your To Do list. 
+1. `todo add <thing to be done>` will add an entry to your To Do list. 
 
-`todo del` will ask you which entry to remove from your To Do list.
+2. `todo del` will ask you which entry to remove from your To Do list.
 
-`todo` will show you the things you need to do.
+3. `todo` will show you the things you need to do.
 
-`todo help`
+4. `todo help`
 
 It’s pretty simple but it has helped me immensely. You can check out the code and installation instructions [here](https://github.com/Deborah-Digges/dot-slash-todo).
 
