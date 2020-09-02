@@ -26,7 +26,7 @@ export default function Home({
 
 export const query = graphql`
 query IndexQuery {
-  allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/[0-9]{4}-[0-9]{2}-[0-9]{2}-.*/" } } ) {
+  allMarkdownRemark(sort: { order: DESC, fields: [fields___date] }, filter: { fileAbsolutePath: { regex: "/[0-9]{4}-[0-9]{2}-[0-9]{2}-.*/" } } ) {
     edges {
       node {
         id
