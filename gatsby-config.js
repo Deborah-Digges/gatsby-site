@@ -35,6 +35,12 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-sharp`
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: "./src/favicon.ico"
+      }
+    }
   ],
 }
