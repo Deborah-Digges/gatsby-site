@@ -1,22 +1,29 @@
 const { createFilePath } = require(`gatsby-source-filesystem`);
-const { extractMetadataFromFilename } = require("./src/util");
+const { extractMetadataFromFilename, isBlogPostFileName } = require("./src/util");
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {
     const { categories } = node.frontmatter;
     const filePath = createFilePath({ node, getNode, basePath: `pages` });
-    const { date, slug } = extractMetadataFromFilename(filePath);
-    console.log(date, slug);
+    
+    let date, slug;
+    if(isBlogPostFileName(filePath)) {
+      const result  = extractMetadataFromFilename(filePath);
+      date = result.date;
+      slug = result.slug;
+      createNodeField({ node, name: `date`, value: date });
+    } else {
+      slug = filePath.substring(1);
+    }
+    console.log(filePath, isBlogPostFileName(filePath), slug, date);
     createNodeField({ node, name: `slug`, value: slug  });
-    createNodeField({ node, name: `date`, value: date });
   }
 };
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
   const blogPostTemplate = require.resolve(`./src/templates/blogTemplate.js`);
-
   const result = await graphql(`
     {
       allMarkdownRemark(

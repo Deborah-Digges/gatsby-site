@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Link from "gatsby-link";
+
 import { TemplateWrapper } from "../layouts/index";
 
 export default function Home({
@@ -9,9 +10,9 @@ export default function Home({
   const blogList = data.allMarkdownRemark.edges.map(edge => (
   <div class="post">
     <h2 class="post-title">
-        <a href={edge.node.fields.slug}>
+        <Link to={edge.node.fields.slug}>
           {edge.node.frontmatter.title}
-        </a>
+        </Link>
     </h2>
     <span class="post-date">{edge.node.fields.date}</span>
   </div>));
@@ -25,7 +26,7 @@ export default function Home({
 
 export const query = graphql`
 query IndexQuery {
-  allMarkdownRemark(sort: { order: DESC, fields: [fields___date] }) {
+  allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/[0-9]{4}-[0-9]{2}-[0-9]{2}-.*/" } } ) {
     edges {
       node {
         id

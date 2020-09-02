@@ -6,17 +6,16 @@ export const TemplateWrapper = ({ children }) => (
     <div className="wrap">
       <div className="masthead">
         <div className="masthead-container">
-          <h3 className="masthead-title">
-            <a title="Home">{"Deborah's"}</a>{" "}
+          <h1 className="masthead-title">
+            <Link to="/">
+              <a title="Home">{"Deborah's"}</a>{" "}
+            </Link>
             <small>{"Doodles"}</small>
-          </h3>
+          </h1>
           <div className="masthead-nav">
-            <h4 className="masthead-title">
-              {"About"}
-            </h4>
-            <h4 className="masthead-title">
-              {"Blog"}
-            </h4>
+            <h2 className="masthead-title">
+              <Link to="/about">{"About"}</Link>
+            </h2>
           </div>
         </div>
       </div>
