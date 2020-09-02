@@ -35,7 +35,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-postcss`
+    `gatsby-plugin-sharp`
   ],
 }
