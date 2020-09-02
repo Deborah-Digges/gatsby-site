@@ -1,17 +1,26 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Link from "gatsby-link";
+import { TemplateWrapper } from "../layouts/index";
 
 export default function Home({
   data, 
 }) {
-  const blogList = data.allMarkdownRemark.edges.map(edge => (<div>
-    <Link to={edge.node.fields.slug}>{edge.node.frontmatter.title}</Link>
-    <h2>{edge.node.fields.date}</h2>
+  const blogList = data.allMarkdownRemark.edges.map(edge => (
+  <div class="post">
+    <h2 class="post-title">
+        <a href={edge.node.fields.slug}>
+          {edge.node.frontmatter.title}
+        </a>
+    </h2>
+    <span class="post-date">{edge.node.fields.date}</span>
   </div>));
-  return (<>
-    {blogList}
-  </>);
+
+  return (<TemplateWrapper>
+    <div class="posts">
+      {blogList}
+    </div>
+  </TemplateWrapper>);
 };
 
 export const query = graphql`
