@@ -96,8 +96,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .masthead-container {
-  margin-right: 2rem;
-  margin-left: 2rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -129,9 +129,9 @@ h1, h2, h3, h4, h5, h6 {
   .masthead-title {
     text-align: center;
   }
-  .masthead-title small {
+  /* .masthead-title small {
     display: none;
-  }
+  } */
 }
 
 

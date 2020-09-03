@@ -8,7 +8,7 @@ export const TemplateWrapper = ({ children }) => (
         <div className="masthead-container">
           <h1 className="masthead-title">
             <Link title="Home" to="/">
-              {"Deborah's"}
+              {"Deb's"}
             </Link>
             {" "}
             <small>{"Doodles"}</small>
